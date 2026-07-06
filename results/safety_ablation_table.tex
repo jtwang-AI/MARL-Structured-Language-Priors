@@ -1,0 +1,15 @@
+\begin{table}[t]
+  \centering
+  \caption{Safety-projection ablation in stress regimes.}
+  \label{tab:safety_ablation}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Variant & Rescue & Formation err. & Violation & Score \\
+    \midrule
+    Q-learning only & 0.091 & 4.42 & 0.311 & -1.39 \\
+    Prior + Q-learning & 0.091 & 4.43 & 0.311 & -1.52 \\
+    Q-learning + safety & 0.095 & 4.01 & 0.301 & -0.71 \\
+    Prior + Q-learning + safety & 0.094 & 4.04 & 0.302 & -0.72 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

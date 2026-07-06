@@ -1,0 +1,40 @@
+{
+  "cases": [
+    {
+      "n_agent": 4,
+      "stage": "medium",
+      "seed": 2401,
+      "horizon": 420,
+      "total_return": 593.7153122890741,
+      "last_target_distance": 0.21529083702065435,
+      "last_target_lost": 0.0
+    },
+    {
+      "n_agent": 8,
+      "stage": "hard",
+      "seed": 2402,
+      "horizon": 420,
+      "total_return": 1102.0617427825928,
+      "last_target_distance": 0.13978170938434256,
+      "last_target_lost": 0.0
+    },
+    {
+      "n_agent": 12,
+      "stage": "hard",
+      "seed": 2403,
+      "horizon": 420,
+      "total_return": 1624.6658002138138,
+      "last_target_distance": 0.22407202717826089,
+      "last_target_lost": 0.0
+    },
+    {
+      "n_agent": 20,
+      "stage": "hard",
+      "seed": 2404,
+      "horizon": 420,
+      "total_return": 2664.4351212978363,
+      "last_target_distance": 0.15328488380213046,
+      "last_target_lost": 0.0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Prototype-level comparison of high-level coordination strategies}
+  \label{tab:prototype_results}
+  \begin{tabular}{p{4.3cm} p{2.3cm} p{2.3cm} p{2.3cm} p{1.8cm}}
+    \toprule
+    Method & Mission score & Adaptation steps & Violation rate & Stability \\
+    \midrule
+    Fixed rule + auction & 67.97 & 18 & 0.112 & 0.843 \\
+    RL only & 75.45 & 14 & 0.034 & 0.921 \\
+    LLM rule only & 75.50 & 11 & 0.117 & 0.839 \\
+    Full stack & 92.49 & 8 & 0.026 & 0.929 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

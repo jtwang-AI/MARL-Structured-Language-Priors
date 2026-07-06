@@ -1,0 +1,62 @@
+[
+  {
+    "method": "Random policy (tau6)",
+    "runs": 1,
+    "episodes_per_run": 6,
+    "mean_return": -338.7418116607393,
+    "mean_return_std_across_runs": 0.0,
+    "mean_tracking_error": 0.9511897589222231,
+    "mean_tracking_error_std_across_runs": 0.0,
+    "mean_target_distance": 0.9661897589222231,
+    "mean_target_distance_std_across_runs": 0.0,
+    "mean_tail100_target_distance": 1.086727324828918,
+    "mean_tail100_target_distance_std_across_runs": 0.0,
+    "mean_target_lost": 0.8145833333333333,
+    "mean_target_lost_std_across_runs": 0.0
+  },
+  {
+    "method": "Random policy (semantic velocity3)",
+    "runs": 1,
+    "episodes_per_run": 6,
+    "mean_return": -113.41456633542354,
+    "mean_return_std_across_runs": 0.0,
+    "mean_tracking_error": 0.7614361846266529,
+    "mean_tracking_error_std_across_runs": 0.0,
+    "mean_target_distance": 0.7764361846266531,
+    "mean_target_distance_std_across_runs": 0.0,
+    "mean_tail100_target_distance": 0.9337179862888405,
+    "mean_tail100_target_distance_std_across_runs": 0.0,
+    "mean_target_lost": 0.6295833333333333,
+    "mean_target_lost_std_across_runs": 0.0
+  },
+  {
+    "method": "MAPPO smoke checkpoint",
+    "runs": 2,
+    "episodes_per_run": 6,
+    "mean_return": 1104.717189386487,
+    "mean_return_std_across_runs": 12.929553255438805,
+    "mean_tracking_error": 0.038019952119927126,
+    "mean_tracking_error_std_across_runs": 0.005509553057996275,
+    "mean_target_distance": 0.051932628730898475,
+    "mean_target_distance_std_across_runs": 0.005665348911123372,
+    "mean_tail100_target_distance": 0.06743106651650896,
+    "mean_tail100_target_distance_std_across_runs": 0.02073210270803346,
+    "mean_target_lost": 0.0028750000000000004,
+    "mean_target_lost_std_across_runs": 0.0028750000000000004
+  },
+  {
+    "method": "STG-MAPPO smoke checkpoint",
+    "runs": 2,
+    "episodes_per_run": 6,
+    "mean_return": 740.6955851096038,
+    "mean_return_std_across_runs": 2.4888265427823058,
+    "mean_tracking_error": 0.11606078473463571,
+    "mean_tracking_error_std_across_runs": 0.004209301172689819,
+    "mean_target_distance": 0.13086922256675507,
+    "mean_target_distance_std_across_runs": 0.0042037047486689905,
+    "mean_tail100_target_distance": 0.13757345586774877,
+    "mean_tail100_target_distance_std_across_runs": 0.0051702402658539565,
+    "mean_target_lost": 0.0,
+    "mean_target_lost_std_across_runs": 0.0
+  }
+]

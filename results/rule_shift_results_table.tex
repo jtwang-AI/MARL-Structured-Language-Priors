@@ -1,0 +1,15 @@
+\begin{table}[t]
+  \centering
+  \caption{Rule-shift adaptation results. Lower adaptation steps and lower violation are better.}
+  \label{tab:rule_shift}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Method & Pre-shift score & Post-shift score & Adapt. steps & Post violation \\
+    \midrule
+    Fixed rule & 15.60 & 17.39 & 2 & 0.216 \\
+    RL only & 14.31 & 17.61 & 29 & 0.212 \\
+    Schema rule only & 14.95 & 16.41 & 1 & 0.212 \\
+    Full stack & 13.45 & 17.63 & 30 & 0.199 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

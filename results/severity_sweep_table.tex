@@ -1,0 +1,30 @@
+\begin{table}[t]
+  \centering
+  \caption{Risk-severity sweep. Higher score and lower violation are better.}
+  \label{tab:severity_sweep}
+  \begin{tabular}{llrrr}
+    \toprule
+    Severity & Method & Rescue & Violation & Score \\
+    \midrule
+    Nominal & Fixed rule & 0.266 & 0.124 & 27.69 \\
+    Nominal & RL only & 0.262 & 0.125 & 27.23 \\
+    Nominal & Schema rule only & 0.241 & 0.128 & 23.80 \\
+    Nominal & Full stack & 0.270 & 0.114 & 28.48 \\
+    \midrule
+    Moderate & Fixed rule & 0.209 & 0.204 & 18.53 \\
+    Moderate & RL only & 0.169 & 0.211 & 12.10 \\
+    Moderate & Schema rule only & 0.207 & 0.204 & 18.18 \\
+    Moderate & Full stack & 0.210 & 0.200 & 18.68 \\
+    \midrule
+    Severe & Fixed rule & 0.102 & 0.300 & 0.69 \\
+    Severe & RL only & 0.100 & 0.300 & 0.47 \\
+    Severe & Schema rule only & 0.102 & 0.300 & 0.69 \\
+    Severe & Full stack & 0.110 & 0.281 & 2.05 \\
+    \midrule
+    Extreme & Fixed rule & 0.072 & 0.361 & -5.10 \\
+    Extreme & RL only & 0.072 & 0.360 & -5.10 \\
+    Extreme & Schema rule only & 0.072 & 0.361 & -5.10 \\
+    Extreme & Full stack & 0.080 & 0.335 & -3.72 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

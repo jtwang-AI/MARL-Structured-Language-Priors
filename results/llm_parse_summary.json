@@ -1,0 +1,133 @@
+{
+  "summary": {
+    "parser": "offline_keyword_schema_baseline",
+    "case_count": 12,
+    "task_node_accuracy": 0.9166666666666666,
+    "role_prior_accuracy": 0.9166666666666666,
+    "hard_constraint_accuracy": 0.8333333333333334,
+    "reward_focus_accuracy": 0.5,
+    "invalid_output_rate": 0.0
+  },
+  "rows": [
+    {
+      "case_id": 1,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": false,
+      "reward_focus_ok": true,
+      "invalid_output": false,
+      "expected_focus": "protect",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 2,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": false,
+      "invalid_output": false,
+      "expected_focus": "verify",
+      "predicted_focus": "safe"
+    },
+    {
+      "case_id": 3,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": false,
+      "reward_focus_ok": true,
+      "invalid_output": false,
+      "expected_focus": "protect",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 4,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": false,
+      "invalid_output": false,
+      "expected_focus": "search",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 5,
+      "task_node_ok": false,
+      "role_prior_ok": false,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": true,
+      "invalid_output": false,
+      "expected_focus": "protect",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 6,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": true,
+      "invalid_output": false,
+      "expected_focus": "safe",
+      "predicted_focus": "safe"
+    },
+    {
+      "case_id": 7,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": false,
+      "invalid_output": false,
+      "expected_focus": "verify",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 8,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": false,
+      "invalid_output": false,
+      "expected_focus": "search",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 9,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": true,
+      "invalid_output": false,
+      "expected_focus": "protect",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 10,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": false,
+      "invalid_output": false,
+      "expected_focus": "search",
+      "predicted_focus": "protect"
+    },
+    {
+      "case_id": 11,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": true,
+      "invalid_output": false,
+      "expected_focus": "safe",
+      "predicted_focus": "safe"
+    },
+    {
+      "case_id": 12,
+      "task_node_ok": true,
+      "role_prior_ok": true,
+      "hard_constraint_ok": true,
+      "reward_focus_ok": false,
+      "invalid_output": false,
+      "expected_focus": "verify",
+      "predicted_focus": "safe"
+    }
+  ]
+}

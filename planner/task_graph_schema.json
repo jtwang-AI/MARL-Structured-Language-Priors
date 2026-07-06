@@ -1,0 +1,71 @@
+{
+  "task_context": {
+    "mission_text": "优先搜索东北扇区，若确认目标则保留一架UAV持续监视，两艘USV形成防护圈。",
+    "sea_state": 3,
+    "communication_quality": 0.74
+  },
+  "task_graph": {
+    "nodes": [
+      {
+        "id": "search_sector_ne",
+        "type": "search",
+        "priority": 0.85
+      },
+      {
+        "id": "verify_target",
+        "type": "verify",
+        "priority": 0.95
+      },
+      {
+        "id": "protect_target",
+        "type": "protect",
+        "priority": 1.0
+      }
+    ],
+    "edges": [
+      {
+        "source": "search_sector_ne",
+        "target": "verify_target",
+        "condition": "target_confidence >= 0.6"
+      },
+      {
+        "source": "verify_target",
+        "target": "protect_target",
+        "condition": "target_confidence >= 0.85"
+      }
+    ]
+  },
+  "role_priors": [
+    {
+      "role": "search_uav",
+      "min_count": 1,
+      "priority": 0.9
+    },
+    {
+      "role": "monitor_uav",
+      "min_count": 1,
+      "priority": 0.8
+    },
+    {
+      "role": "protect_usv",
+      "min_count": 2,
+      "priority": 1.0
+    }
+  ],
+  "hard_constraints": [
+    "min_pairwise_distance >= 15m",
+    "communication_quality >= 0.4",
+    "protect_usv count >= 2 after verify_target"
+  ],
+  "soft_constraints": [
+    "prefer northeast search sector",
+    "prefer lower energy consumption when mission risk is low"
+  ],
+  "reward_template": {
+    "search": 1.0,
+    "verify": 1.2,
+    "protect": 1.5,
+    "safe": 1.4,
+    "energy": 0.6
+  }
+}

@@ -1,0 +1,22 @@
+\begin{table}[t]
+  \centering
+  \caption{Stress-regime evaluation with hydrodynamic, sensor-noise, and packet-drop perturbations.}
+  \label{tab:realism_layer}
+  \begin{tabular}{llrrrrr}
+    \toprule
+    Method & Layer & Rescue & Formation err. & Violation & Drop rate & Score \\
+    \midrule
+    Fixed rule & Nominal & 0.110 & 4.32 & 0.304 & 0.000 & 2.03 \\
+    Fixed rule & Hydro+sensor+comm & 0.104 & 4.79 & 0.315 & 0.464 & 0.50 \\
+    \midrule
+    Cognitive prior + Q-learning + safety & Nominal & 0.118 & 3.57 & 0.286 & 0.000 & 3.09 \\
+    Cognitive prior + Q-learning + safety & Hydro+sensor+comm & 0.111 & 3.91 & 0.295 & 0.463 & 1.63 \\
+    \midrule
+    Deep actor-critic & Nominal & 0.110 & 4.32 & 0.304 & 0.000 & 2.03 \\
+    Deep actor-critic & Hydro+sensor+comm & 0.105 & 4.73 & 0.314 & 0.412 & 0.69 \\
+    \midrule
+    Cognitive prior + deep actor-critic + safety & Nominal & 0.119 & 3.47 & 0.284 & 0.000 & 3.41 \\
+    Cognitive prior + deep actor-critic + safety & Hydro+sensor+comm & 0.112 & 3.79 & 0.292 & 0.449 & 2.00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

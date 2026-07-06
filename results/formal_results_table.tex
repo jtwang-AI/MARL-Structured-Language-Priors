@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Formal evaluation of high-level coordination strategies}
+  \label{tab:formal_results}
+  \begin{tabular}{p{4.0cm} p{1.6cm} p{1.6cm} p{1.6cm} p{1.6cm} p{1.6cm}}
+    \toprule
+    Method & Regime & Mission time & Rescue success & Violation rate & Score \\
+    \midrule
+    Fixed rule + auction & Standard & 24.76 & 0.255 & 0.157 & 25.83 \\
+    Fixed rule + auction & Stress & 45.34 & 0.096 & 0.310 & -0.44 \\
+    \midrule
+    RL only & Standard & 25.00 & 0.253 & 0.157 & 25.54 \\
+    RL only & Stress & 48.26 & 0.091 & 0.311 & -1.42 \\
+    \midrule
+    LLM rule only & Standard & 25.89 & 0.246 & 0.158 & 24.47 \\
+    LLM rule only & Stress & 45.34 & 0.096 & 0.310 & -0.44 \\
+    \midrule
+    Cognitive prior + Q-learning + safety projection & Standard & 26.76 & 0.257 & 0.149 & 26.05 \\
+    Cognitive prior + Q-learning + safety projection & Stress & 47.98 & 0.103 & 0.292 & 0.74 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

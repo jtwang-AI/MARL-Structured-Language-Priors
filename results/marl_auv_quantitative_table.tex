@@ -1,0 +1,15 @@
+\begin{table}[t]
+  \centering
+  \caption{External MARL-AUV quantitative sanity evaluation on the six-DOF target-tracking environment. The trained rows use available smoke-training checkpoints and therefore indicate environment-level compatibility rather than final benchmark performance.}
+  \label{tab:marl_auv_quant}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    Method & Runs & Return & Track err. & Target dist. & Lost rate \\
+    \midrule
+    Random policy (tau6) & 1 & -338.74 & 0.951 & 0.966 & 0.815 \\
+    Random policy (semantic velocity3) & 1 & -113.41 & 0.761 & 0.776 & 0.630 \\
+    MAPPO smoke checkpoint & 2 & 1104.72 & 0.038 & 0.052 & 0.003 \\
+    STG-MAPPO smoke checkpoint & 2 & 740.70 & 0.116 & 0.131 & 0.000 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

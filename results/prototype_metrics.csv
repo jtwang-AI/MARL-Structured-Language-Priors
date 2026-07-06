@@ -1,0 +1,5 @@
+method,mission_score,adaptation_steps,violation_rate,stability
+Fixed rule + auction,67.97,18,0.112,0.843
+RL only,75.45,14,0.034,0.921
+LLM rule only,75.50,11,0.117,0.839
+Full stack,92.49,8,0.026,0.929

@@ -1,0 +1,13 @@
+case_id,task_node_ok,role_prior_ok,hard_constraint_ok,reward_focus_ok,invalid_output,expected_focus,predicted_focus
+1,True,True,False,True,False,protect,protect
+2,True,True,True,False,False,verify,safe
+3,True,True,False,True,False,protect,protect
+4,True,True,True,False,False,search,protect
+5,False,False,True,True,False,protect,protect
+6,True,True,True,True,False,safe,safe
+7,True,True,True,False,False,verify,protect
+8,True,True,True,False,False,search,protect
+9,True,True,True,True,False,protect,protect
+10,True,True,True,False,False,search,protect
+11,True,True,True,True,False,safe,safe
+12,True,True,True,False,False,verify,safe

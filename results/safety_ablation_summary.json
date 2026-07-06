@@ -1,0 +1,92 @@
+{
+  "rows": [
+    {
+      "method": "q_only",
+      "regime": "standard",
+      "mission_time": 25.457220630250976,
+      "rescue_success": 0.2505134306936491,
+      "formation_error": 3.502299210522328,
+      "communication_load": 6.37,
+      "violation_rate": 0.15739010672845202,
+      "reward": -6.657822821368043,
+      "composite_score": 25.134552869749317
+    },
+    {
+      "method": "prior_only",
+      "regime": "standard",
+      "mission_time": 25.239996682619285,
+      "rescue_success": 0.2519890935666515,
+      "formation_error": 3.5013821891513004,
+      "communication_load": 6.46,
+      "violation_rate": 0.15713382619860905,
+      "reward": -6.011765469443151,
+      "composite_score": 25.352889923972462
+    },
+    {
+      "method": "safety_only",
+      "regime": "standard",
+      "mission_time": 26.246297222224978,
+      "rescue_success": 0.25577230154079184,
+      "formation_error": 3.237990244990933,
+      "communication_load": 6.5600000000000005,
+      "violation_rate": 0.15073389015121852,
+      "reward": -6.249139443306493,
+      "composite_score": 25.926336925167178
+    },
+    {
+      "method": "prior_safety",
+      "regime": "standard",
+      "mission_time": 25.772728395368155,
+      "rescue_success": 0.25880080507664427,
+      "formation_error": 3.1540585470560667,
+      "communication_load": 6.764600000000001,
+      "violation_rate": 0.14840283223091508,
+      "reward": -4.741953083055758,
+      "composite_score": 26.437975780893478
+    },
+    {
+      "method": "q_only",
+      "regime": "stress",
+      "mission_time": 47.118517918403306,
+      "rescue_success": 0.09055273826488261,
+      "formation_error": 4.417747009007086,
+      "communication_load": 7.32,
+      "violation_rate": 0.31091754137932276,
+      "reward": -19.415460323050503,
+      "composite_score": -1.3910933737539466
+    },
+    {
+      "method": "prior_only",
+      "regime": "stress",
+      "mission_time": 48.22779272867358,
+      "rescue_success": 0.09074661360609229,
+      "formation_error": 4.429971484771972,
+      "communication_load": 7.5600000000000005,
+      "violation_rate": 0.31115545979155673,
+      "reward": -30.863415803719885,
+      "composite_score": -1.5195636545670423
+    },
+    {
+      "method": "safety_only",
+      "regime": "stress",
+      "mission_time": 48.654381002491235,
+      "rescue_success": 0.09493296431094002,
+      "formation_error": 4.009109926062163,
+      "communication_load": 7.724,
+      "violation_rate": 0.3012266893871653,
+      "reward": -18.687401353919253,
+      "composite_score": -0.7087092429674775
+    },
+    {
+      "method": "prior_safety",
+      "regime": "stress",
+      "mission_time": 47.35551574683844,
+      "rescue_success": 0.09362832922725164,
+      "formation_error": 4.036558399718732,
+      "communication_load": 7.2784,
+      "violation_rate": 0.30203929742099994,
+      "reward": -28.515197526990814,
+      "composite_score": -0.7244018835574548
+    }
+  ]
+}
