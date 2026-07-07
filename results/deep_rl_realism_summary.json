@@ -25,24 +25,24 @@
     {
       "method": "deep_rl_only",
       "regime": "standard",
-      "mission_time": 26.380418938972802,
-      "rescue_success": 0.23898493824594513,
-      "formation_error": 3.744411505206779,
-      "communication_load": 7.2,
-      "violation_rate": 0.15913957145591356,
-      "reward": -8.070145134249989,
-      "composite_score": 23.367335386267314
+      "mission_time": 26.613992412190388,
+      "rescue_success": 0.2371504212941278,
+      "formation_error": 3.73254632845421,
+      "communication_load": 6.4,
+      "violation_rate": 0.1591720602796478,
+      "reward": -7.968179450092328,
+      "composite_score": 23.144387378781133
     },
     {
       "method": "deep_prior_safety",
       "regime": "standard",
-      "mission_time": 27.529603626586237,
-      "rescue_success": 0.24566494922356025,
-      "formation_error": 3.25101125630884,
-      "communication_load": 6.784000000000001,
-      "violation_rate": 0.14721596422374048,
-      "reward": -6.143083667194391,
-      "composite_score": 24.505949668137063
+      "mission_time": 27.288928907518855,
+      "rescue_success": 0.2475539017913532,
+      "formation_error": 3.2612041960149574,
+      "communication_load": 7.632000000000001,
+      "violation_rate": 0.14713797648642818,
+      "reward": -6.233887721630608,
+      "composite_score": 24.735830718612714
     },
     {
       "method": "fixed_rule",
@@ -69,24 +69,24 @@
     {
       "method": "deep_rl_only",
       "regime": "stress",
-      "mission_time": 41.48105960345232,
-      "rescue_success": 0.11039790561459986,
-      "formation_error": 4.324675637560988,
-      "communication_load": 7.2,
-      "violation_rate": 0.30411092751357904,
-      "reward": -17.005165278502425,
-      "composite_score": 2.026367409092934
+      "mission_time": 41.767497422529445,
+      "rescue_success": 0.10950874456254675,
+      "formation_error": 4.294602113619609,
+      "communication_load": 6.4,
+      "violation_rate": 0.3035915757551972,
+      "reward": -16.9300372119823,
+      "composite_score": 1.936277999067131
     },
     {
       "method": "deep_prior_safety",
       "regime": "stress",
-      "mission_time": 44.545627811724934,
-      "rescue_success": 0.11859652630226507,
-      "formation_error": 3.4659931909352424,
-      "communication_load": 6.784000000000001,
-      "violation_rate": 0.2839081343777862,
-      "reward": -23.21252981469675,
-      "composite_score": 3.4094290462599792
+      "mission_time": 44.23869360569711,
+      "rescue_success": 0.11956600138853345,
+      "formation_error": 3.4905393603780444,
+      "communication_load": 7.632000000000001,
+      "violation_rate": 0.2842930340917249,
+      "reward": -23.317561566106004,
+      "composite_score": 3.514373558042332
     }
   ],
   "realism": [
@@ -147,56 +147,56 @@
     {
       "method": "deep_rl_only",
       "regime": "stress",
-      "mission_time": 41.48105960345232,
-      "rescue_success": 0.11039790561459986,
-      "formation_error": 4.324675637560988,
-      "communication_load": 7.2,
-      "violation_rate": 0.30411092751357904,
-      "reward": -17.005165278502425,
-      "composite_score": 2.026367409092934,
+      "mission_time": 41.767497422529445,
+      "rescue_success": 0.10950874456254675,
+      "formation_error": 4.294602113619609,
+      "communication_load": 6.4,
+      "violation_rate": 0.3035915757551972,
+      "reward": -16.9300372119823,
+      "composite_score": 1.936277999067131,
       "layer": "nominal"
     },
     {
       "method": "deep_rl_only",
       "regime": "stress",
-      "mission_time": 43.684620649206686,
-      "rescue_success": 0.1049802081586106,
-      "formation_error": 4.728525274909127,
-      "communication_load": 8.150166802113926,
-      "violation_rate": 0.3138624511281964,
-      "reward": -18.683860134938307,
-      "composite_score": 0.6932562760831509,
+      "mission_time": 44.356765276325625,
+      "rescue_success": 0.10303945150987924,
+      "formation_error": 4.755805429266319,
+      "communication_load": 7.420039508442218,
+      "violation_rate": 0.31477313558785164,
+      "reward": -18.868284308171763,
+      "composite_score": 0.3708665468785751,
       "layer": "hydro_sensor_comm",
-      "hydrodynamic_load": 1.0062876010300807,
-      "sensor_error": 0.20490159574523006,
-      "packet_drop_rate": 0.4123987856397248
+      "hydrodynamic_load": 1.1435086375341825,
+      "sensor_error": 0.24393047112527388,
+      "packet_drop_rate": 0.49806616623155164
     },
     {
       "method": "deep_prior_safety",
       "regime": "stress",
-      "mission_time": 44.545627811724934,
-      "rescue_success": 0.11859652630226507,
-      "formation_error": 3.4659931909352424,
-      "communication_load": 6.784000000000001,
-      "violation_rate": 0.2839081343777862,
-      "reward": -23.21252981469675,
-      "composite_score": 3.4094290462599792,
+      "mission_time": 44.23869360569711,
+      "rescue_success": 0.11956600138853345,
+      "formation_error": 3.4905393603780444,
+      "communication_load": 7.632000000000001,
+      "violation_rate": 0.2842930340917249,
+      "reward": -23.317561566106004,
+      "composite_score": 3.514373558042332,
       "layer": "nominal"
     },
     {
       "method": "deep_prior_safety",
       "regime": "stress",
-      "mission_time": 46.99600760763781,
-      "rescue_success": 0.11238319124817206,
-      "formation_error": 3.787180734611553,
-      "communication_load": 7.75850754205915,
-      "violation_rate": 0.29196839394731994,
-      "reward": -25.775638952803483,
-      "composite_score": 2.0014242240770717,
+      "mission_time": 46.583863425334286,
+      "rescue_success": 0.11368934663756844,
+      "formation_error": 3.813817684102754,
+      "communication_load": 8.64061530603122,
+      "violation_rate": 0.2923454219738229,
+      "reward": -25.854136240207104,
+      "composite_score": 2.160466901577445,
       "layer": "hydro_sensor_comm",
       "hydrodynamic_load": 0.9998469124462489,
       "sensor_error": 0.20431868646024,
-      "packet_drop_rate": 0.4488997743123293
+      "packet_drop_rate": 0.412987792367343
     }
   ],
   "training": {
@@ -206,17 +206,51 @@
       "final_violation": 0.2075246770692639
     },
     "deep_rl_only": {
-      "final_reward": -13.809252416916811,
-      "final_score": 10.505496928747148,
-      "final_violation": 0.25147262904011125
+      "final_reward": -14.3672606947791,
+      "final_score": 9.48230809678121,
+      "final_violation": 0.253136227425243
     },
     "deep_prior_safety": {
-      "final_reward": -12.866276710653695,
-      "final_score": 16.160665943296177,
-      "final_violation": 0.20439033327529982
+      "final_reward": -14.105543660021684,
+      "final_score": 15.454783153781099,
+      "final_violation": 0.2057976851785778
     }
   },
   "state_dim": 26,
   "deep_episodes": 1600,
-  "q_episodes": 420
+  "q_episodes": 420,
+  "realism_protocol": {
+    "random_seed": 809,
+    "hydrodynamic_load": {
+      "distribution": "max(0, Normal(0.18 * sea_state + 0.12 * target_speed, 0.05))"
+    },
+    "sensor_error": {
+      "distribution": "max(0, Normal(0.04 * sea_state + 0.10 * (1 - communication_quality), 0.015))"
+    },
+    "packet_drop_rate": {
+      "distribution": "clip(Normal(0.55 * (1 - communication_quality) + 0.035 * sea_state, 0.035), 0, 0.85)"
+    },
+    "action_modifiers": {
+      "conservative_safety": {
+        "hydrodynamic_load": 0.88,
+        "sensor_error": 0.84,
+        "packet_drop_rate": 0.9
+      },
+      "behavior_distributed": {
+        "packet_drop_rate": 0.92
+      },
+      "centralized_optimal": {
+        "packet_drop_rate": 1.18
+      }
+    },
+    "metric_transfer": {
+      "mission_time": "x * (1 + 0.030 * hydrodynamic_load + 0.055 * packet_drop_rate)",
+      "verification_time": "x * (1 + 0.025 * sensor_error + 0.030 * packet_drop_rate)",
+      "encirclement_time": "x * (1 + 0.040 * hydrodynamic_load + 0.045 * packet_drop_rate)",
+      "formation_error": "x * (1 + 0.070 * hydrodynamic_load + 0.110 * sensor_error)",
+      "communication_load": "x * (1 + 0.32 * packet_drop_rate)",
+      "total_path_length": "x * (1 + 0.020 * hydrodynamic_load)",
+      "rescue_success": "x * max(0.70, 1 - 0.090 * packet_drop_rate - 0.060 * sensor_error)"
+    }
+  }
 }

@@ -401,6 +401,7 @@ def export_deep_table(rows: Sequence[Dict[str, object]]) -> None:
         "  \\centering",
         "  \\caption{Deep high-level reinforcement-learning comparison.}",
         "  \\label{tab:deep_rl_comparison}",
+        "  \\resizebox{\\linewidth}{!}{%",
         "  \\begin{tabular}{llrrrr}",
         "    \\toprule",
         "    Method & Regime & Rescue & Formation err. & Violation & Score \\\\",
@@ -414,7 +415,7 @@ def export_deep_table(rows: Sequence[Dict[str, object]]) -> None:
             )
         lines.append("    \\midrule")
     lines[-1] = "    \\bottomrule"
-    lines.extend(["  \\end{tabular}", "\\end{table}"])
+    lines.extend(["  \\end{tabular}}", "\\end{table}"])
     (RESULTS_DIR / "deep_rl_comparison_table.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -424,6 +425,7 @@ def export_realism_table(rows: Sequence[Dict[str, object]]) -> None:
         "  \\centering",
         "  \\caption{Stress-regime evaluation with hydrodynamic, sensor-noise, and packet-drop perturbations.}",
         "  \\label{tab:realism_layer}",
+        "  \\resizebox{\\linewidth}{!}{%",
         "  \\begin{tabular}{llrrrrr}",
         "    \\toprule",
         "    Method & Layer & Rescue & Formation err. & Violation & Drop rate & Score \\\\",
@@ -439,7 +441,7 @@ def export_realism_table(rows: Sequence[Dict[str, object]]) -> None:
             )
         lines.append("    \\midrule")
     lines[-1] = "    \\bottomrule"
-    lines.extend(["  \\end{tabular}", "\\end{table}"])
+    lines.extend(["  \\end{tabular}}", "\\end{table}"])
     (RESULTS_DIR / "realism_layer_table.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
