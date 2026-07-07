@@ -6,6 +6,8 @@ __pycache__/
 .venv/
 venv/
 ENV/
+!/env/
+!/env/*.py
 env.bak/
 .mypy_cache/
 .pytest_cache/

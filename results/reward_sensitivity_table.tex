@@ -1,0 +1,17 @@
+\begin{table}[t]
+  \centering
+  \caption{Sensitivity of stress-regime conclusions to Equation~(4) weights. Weight vector order is $(w_p,w_v,w_T,w_e,w_c)$.}
+  \label{tab:reward_sensitivity}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{llrrrrr}
+    \toprule
+    Profile & Weights & Fixed & RL only & Schema rule & Full stack & Best \\
+    \midrule
+    Nominal & (130,18,0.12,0.35,0.05) & -0.44 & -1.42 & -0.44 & 0.74 & Full stack \\
+    Rescue-heavy & (160,18,0.12,0.35,0.05) & 2.44 & 1.31 & 2.44 & 3.83 & Full stack \\
+    Safety-heavy & (130,30,0.12,0.50,0.05) & -4.83 & -5.81 & -4.83 & -3.31 & Full stack \\
+    Comm-heavy & (130,18,0.12,0.35,0.35) & -2.60 & -3.55 & -2.60 & -1.29 & Full stack \\
+    Speed-first & (130,18,0.65,0.35,0.05) & -24.47 & -27.00 & -24.47 & -24.68 & Fixed rule \\
+    \bottomrule
+  \end{tabular}}
+\end{table}

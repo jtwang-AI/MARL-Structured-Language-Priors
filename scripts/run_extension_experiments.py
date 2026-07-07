@@ -35,8 +35,8 @@ from msar_sim.scenario import Scenario, generate_scenario  # noqa: E402
 from env.chapter4_adapter import (  # noqa: E402
     ACTIONS,
     ActionBundle,
-    compute_composite_score,
     compute_reward,
+    compute_composite_score,
     derive_violation_rate,
     evaluate_bundle,
 )
@@ -130,13 +130,7 @@ def summarize_outcomes(name: str, regime: str, outcomes: Sequence[Dict[str, floa
         "violation_rate": mean(item["violation_rate"] for item in outcomes),
         "reward": mean(item["reward"] for item in outcomes),
     }
-    row["composite_score"] = (
-        130.0 * row["rescue_success"]
-        - 18.0 * row["violation_rate"]
-        - 0.12 * row["mission_time"]
-        - 0.35 * row["formation_error"]
-        - 0.05 * row["communication_load"]
-    )
+    row["composite_score"] = compute_composite_score(row, row["violation_rate"])
     if extra:
         row.update(extra)
     return row

@@ -23,6 +23,7 @@ python3 -m venv .venv
 .venv/bin/python scripts/generate_prototype_results.py
 .venv/bin/python scripts/run_formal_experiments.py
 .venv/bin/python scripts/run_extension_experiments.py
+.venv/bin/python scripts/run_reward_sensitivity_experiments.py
 .venv/bin/python scripts/run_deep_rl_realism_experiments.py
 ```
 
@@ -41,6 +42,7 @@ python3 scripts/run_mock_pipeline.py
 python3 scripts/generate_prototype_results.py
 python3 scripts/run_formal_experiments.py
 python3 scripts/run_extension_experiments.py
+python3 scripts/run_reward_sensitivity_experiments.py
 python3 scripts/run_deep_rl_realism_experiments.py
 ```
 
@@ -60,6 +62,7 @@ python3 scripts/run_deep_rl_realism_experiments.py
 - `results/llm_parse_eval.csv`
 - `results/deep_rl_comparison.csv`
 - `results/realism_layer_results.csv`
+- `results/reward_sensitivity_results.csv`
 - `results/marl_auv_quantitative_summary.csv`
 - `figures/rule_shift_adaptation.png`
 - `figures/platform_failure_comparison.png`
@@ -90,6 +93,12 @@ implemented in `scripts/run_extension_experiments.py`:
 - safety-projection ablation
 - offline schema parsing evaluation for language-like SAR instructions
 
+The Equation (4) weight-sensitivity check is implemented in
+`scripts/run_reward_sensitivity_experiments.py`. It does not retrain policies;
+it recomputes the reported stress-regime composite score from the raw formal
+metrics under nominal, rescue-heavy, safety-heavy, communication-heavy, and
+speed-first scalarizations.
+
 The same extension script was also run on remote host `happy`; the key CSV files
 match the local run up to floating-point formatting.
 
@@ -101,3 +110,7 @@ sensor error, and packet drops. This script was run on remote host `happy` with
 the `happy` conda environment. PyTorch imported successfully; CUDA fell back to
 CPU because the installed NVIDIA driver is older than the CUDA build bundled
 with that environment.
+
+The realism-layer script now writes the explicit perturbation protocol into
+`results/deep_rl_realism_summary.json`, including the sea-state/communication
+sampling formulas, action modifiers, and metric-transfer equations.

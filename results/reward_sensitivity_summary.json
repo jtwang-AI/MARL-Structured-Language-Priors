@@ -1,0 +1,70 @@
+{
+  "source": "results/formal_results.csv",
+  "profiles": [
+    {
+      "profile": "nominal",
+      "label": "Nominal",
+      "weights": "(130,18,0.12,0.35,0.05)",
+      "fixed_rule_score": -0.4413617754816392,
+      "rl_only_score": -1.4229906939126868,
+      "schema_rule_score": -0.4413617754816392,
+      "full_stack_score": 0.7427776993724616,
+      "full_minus_fixed": 1.1841394748541008,
+      "full_minus_rl": 2.1657683932851484,
+      "best_method": "full_stack",
+      "best_label": "Full stack"
+    },
+    {
+      "profile": "rescue_heavy",
+      "label": "Rescue-heavy",
+      "weights": "(160,18,0.12,0.35,0.05)",
+      "fixed_rule_score": 2.441105633870389,
+      "rl_only_score": 1.312660890451192,
+      "schema_rule_score": 2.441105633870389,
+      "full_stack_score": 3.8270612676488454,
+      "full_minus_fixed": 1.3859556337784564,
+      "full_minus_rl": 2.5144003771976533,
+      "best_method": "full_stack",
+      "best_label": "Full stack"
+    },
+    {
+      "profile": "safety_heavy",
+      "label": "Safety-heavy",
+      "weights": "(130,30,0.12,0.50,0.05)",
+      "fixed_rule_score": -4.826631105476197,
+      "rl_only_score": -5.810911290672134,
+      "schema_rule_score": -4.826631105476197,
+      "full_stack_score": -3.3053109606393862,
+      "full_minus_fixed": 1.5213201448368103,
+      "full_minus_rl": 2.505600330032748,
+      "best_method": "full_stack",
+      "best_label": "Full stack"
+    },
+    {
+      "profile": "communication_heavy",
+      "label": "Comm-heavy",
+      "weights": "(130,18,0.12,0.35,0.35)",
+      "fixed_rule_score": -2.601361775481639,
+      "rl_only_score": -3.5469906939126865,
+      "schema_rule_score": -2.601361775481639,
+      "full_stack_score": -1.2871423006275384,
+      "full_minus_fixed": 1.3142194748541007,
+      "full_minus_rl": 2.2598483932851483,
+      "best_method": "full_stack",
+      "best_label": "Full stack"
+    },
+    {
+      "profile": "speed_first",
+      "label": "Speed-first",
+      "weights": "(130,18,0.65,0.35,0.05)",
+      "fixed_rule_score": -24.473607587552852,
+      "rl_only_score": -26.9988024442157,
+      "schema_rule_score": -24.473607587552852,
+      "full_stack_score": -24.68404893073203,
+      "full_minus_fixed": -0.21044134317917695,
+      "full_minus_rl": 2.3147535134836694,
+      "best_method": "fixed_rule",
+      "best_label": "Fixed rule"
+    }
+  ]
+}

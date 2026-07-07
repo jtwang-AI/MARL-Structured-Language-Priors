@@ -6,7 +6,7 @@ import csv
 import json
 import math
 import sys
-from dataclasses import asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from random import Random
 from statistics import mean
@@ -53,12 +53,46 @@ Q_EPISODES = 420
 DEEP_EPISODES = 1600
 EVAL_COUNT = 96
 
+REALISM_PROTOCOL = {
+    "random_seed": 809,
+    "hydrodynamic_load": {
+        "distribution": "max(0, Normal(0.18 * sea_state + 0.12 * target_speed, 0.05))",
+    },
+    "sensor_error": {
+        "distribution": "max(0, Normal(0.04 * sea_state + 0.10 * (1 - communication_quality), 0.015))",
+    },
+    "packet_drop_rate": {
+        "distribution": "clip(Normal(0.55 * (1 - communication_quality) + 0.035 * sea_state, 0.035), 0, 0.85)",
+    },
+    "action_modifiers": {
+        "conservative_safety": {"hydrodynamic_load": 0.88, "sensor_error": 0.84, "packet_drop_rate": 0.90},
+        "behavior_distributed": {"packet_drop_rate": 0.92},
+        "centralized_optimal": {"packet_drop_rate": 1.18},
+    },
+    "metric_transfer": {
+        "mission_time": "x * (1 + 0.030 * hydrodynamic_load + 0.055 * packet_drop_rate)",
+        "verification_time": "x * (1 + 0.025 * sensor_error + 0.030 * packet_drop_rate)",
+        "encirclement_time": "x * (1 + 0.040 * hydrodynamic_load + 0.045 * packet_drop_rate)",
+        "formation_error": "x * (1 + 0.070 * hydrodynamic_load + 0.110 * sensor_error)",
+        "communication_load": "x * (1 + 0.32 * packet_drop_rate)",
+        "total_path_length": "x * (1 + 0.020 * hydrodynamic_load)",
+        "rescue_success": "x * max(0.70, 1 - 0.090 * packet_drop_rate - 0.060 * sensor_error)",
+    },
+}
+
 METHOD_LABELS = {
     "fixed_rule": "Fixed rule",
     "q_full_stack": "Cognitive prior + Q-learning + safety",
     "deep_rl_only": "Deep actor-critic",
     "deep_prior_safety": "Cognitive prior + deep actor-critic + safety",
 }
+
+
+@dataclass(frozen=True)
+class RealismParameters:
+    hydrodynamic_load: float
+    sensor_error: float
+    packet_drop_rate: float
 
 
 def neutral_prior(scenario) -> CognitivePrior:
@@ -272,31 +306,44 @@ def recompute_after_realism(metrics: Dict[str, float], scenario, prior: Cognitiv
     return adjusted
 
 
-def apply_realism_layer(metrics: Dict[str, float], scenario, action: ActionBundle, prior: CognitivePrior, hard_count: int, rng: Random):
-    adjusted = dict(metrics)
+def sample_realism_parameters(scenario, action: ActionBundle, rng: Random) -> RealismParameters:
     sea = scenario.sea_state
-    current_load = max(0.0, rng.gauss(0.18 * sea + 0.12 * scenario.target_speed, 0.05))
+    hydrodynamic_load = max(0.0, rng.gauss(0.18 * sea + 0.12 * scenario.target_speed, 0.05))
     sensor_error = max(0.0, rng.gauss(0.04 * sea + 0.10 * (1.0 - scenario.communication_quality), 0.015))
-    packet_drop = max(0.0, min(0.85, rng.gauss(0.55 * (1.0 - scenario.communication_quality) + 0.035 * sea, 0.035)))
+    packet_drop_rate = max(0.0, min(0.85, rng.gauss(0.55 * (1.0 - scenario.communication_quality) + 0.035 * sea, 0.035)))
 
     if action.safety_mode == "conservative":
-        current_load *= 0.88
+        hydrodynamic_load *= 0.88
         sensor_error *= 0.84
-        packet_drop *= 0.90
+        packet_drop_rate *= 0.90
     if action.method == "behavior_distributed":
-        packet_drop *= 0.92
+        packet_drop_rate *= 0.92
     elif action.method == "centralized_optimal":
-        packet_drop *= 1.18
+        packet_drop_rate *= 1.18
 
-    adjusted["mission_time"] *= 1.0 + 0.030 * current_load + 0.055 * packet_drop
+    return RealismParameters(
+        hydrodynamic_load=hydrodynamic_load,
+        sensor_error=sensor_error,
+        packet_drop_rate=packet_drop_rate,
+    )
+
+
+def apply_realism_layer(metrics: Dict[str, float], scenario, action: ActionBundle, prior: CognitivePrior, hard_count: int, rng: Random):
+    adjusted = dict(metrics)
+    params = sample_realism_parameters(scenario, action, rng)
+    hydrodynamic_load = params.hydrodynamic_load
+    sensor_error = params.sensor_error
+    packet_drop = params.packet_drop_rate
+
+    adjusted["mission_time"] *= 1.0 + 0.030 * hydrodynamic_load + 0.055 * packet_drop
     adjusted["verification_time"] *= 1.0 + 0.025 * sensor_error + 0.030 * packet_drop
-    adjusted["encirclement_time"] *= 1.0 + 0.040 * current_load + 0.045 * packet_drop
-    adjusted["formation_error"] *= 1.0 + 0.070 * current_load + 0.110 * sensor_error
+    adjusted["encirclement_time"] *= 1.0 + 0.040 * hydrodynamic_load + 0.045 * packet_drop
+    adjusted["formation_error"] *= 1.0 + 0.070 * hydrodynamic_load + 0.110 * sensor_error
     adjusted["communication_load"] *= 1.0 + 0.32 * packet_drop
-    adjusted["total_path_length"] *= 1.0 + 0.020 * current_load
+    adjusted["total_path_length"] *= 1.0 + 0.020 * hydrodynamic_load
     adjusted["rescue_success"] *= max(0.70, 1.0 - 0.090 * packet_drop - 0.060 * sensor_error)
     adjusted = recompute_after_realism(adjusted, scenario, prior, hard_count)
-    adjusted["hydrodynamic_load"] = current_load
+    adjusted["hydrodynamic_load"] = hydrodynamic_load
     adjusted["sensor_error"] = sensor_error
     adjusted["packet_drop_rate"] = packet_drop
     return adjusted
@@ -468,6 +515,7 @@ def main() -> None:
             "state_dim": int(len(state_features(generate_scenario(seed=1, scenario_id=0), build_prior(schema, generate_scenario(seed=1, scenario_id=0), True), True))),
             "deep_episodes": DEEP_EPISODES,
             "q_episodes": Q_EPISODES,
+            "realism_protocol": REALISM_PROTOCOL,
         },
     )
     export_deep_table(deep_rows)
