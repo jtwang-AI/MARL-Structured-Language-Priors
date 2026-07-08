@@ -107,9 +107,7 @@ The deep-RL and realism-layer extension is implemented in
 actor-critic over the high-level action bundle, compares it with the tabular full
 stack, and evaluates a stress-regime perturbation layer with hydrodynamic load,
 sensor error, and packet drops. This script was run on remote host `happy` with
-the `happy` conda environment. PyTorch imported successfully; CUDA fell back to
-CPU because the installed NVIDIA driver is older than the CUDA build bundled
-with that environment.
+the `happy` conda environment. PyTorch imported successfully.
 
 The realism-layer script now writes the explicit perturbation protocol into
 `results/deep_rl_realism_summary.json`, including the sea-state/communication
